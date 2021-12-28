@@ -15,7 +15,18 @@ This project provides example of execution multiple tasks or processes over a ce
 | **Timer** |  This class provides a mechanism for executing a method on a thread pool thread at specified intervals. You are not allowed to inherit this class.|
 | **Volatile** |  This class contains methods for performing volatile memory operations.|
 
+### Life Cycle of a thread
 
+- **Unstarted state:** When an instance of a Thread class is created, it is in the unstarted state, means the thread has not yet started to run when the thread is in this state. Or in other words _Start()_ method is not called.
+- **Runnable State:** A thread that is ready to run is moved to runnable state. In this state, a thread might actually be running or it might be ready to run at any instant of time. It is the responsibility of the thread scheduler to give the thread, time to run. Or in other words, the  _Start()_  method is called.  
+    
+- **Running State:** A thread that is running. Or in other words, the thread gets the processor.
+- **Not Runnable State:** A thread that is not executable because
+    -   Sleep() method is called.
+    -   Wait() method is called.
+    -   Due to I/O request.
+    -   Suspend() method is called.
+- **Dead State:**  When the thread completes its task, then thread enters into dead, terminates, abort state.
 
 ### Important Points
 
