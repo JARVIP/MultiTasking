@@ -8,9 +8,16 @@ namespace MultiTasking
     {
         static void Main(string[] args)
         {
-            //SimultaneousLaunchOfTwoMethod.Run();
+           // SimultaneousLaunchOfTwoMethod.Run();
             //TypesOfThreads.RunForegroundThread();
             //TypesOfThreads.RunBackgroundThread();
+
+            #region PassDataTypeSafeManner
+            //int Max = 10;
+            //PassDataTypeSafeManner obj = new PassDataTypeSafeManner(Max);
+            //Thread T1 = new Thread(new ThreadStart(obj.DisplayNumbers));
+            //T1.Start();
+            #endregion
         }
     }
 }
