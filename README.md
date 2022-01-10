@@ -1,7 +1,6 @@
 # C# Multithreading
 This project provides example of execution multiple tasks or processes over a certain time interval.
 
-
 ### System.Threading 
 *Some commonly used classes in this namespace* 
 
