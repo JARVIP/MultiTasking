@@ -6,7 +6,6 @@ This project provides example of execution multiple tasks or processes over a ce
 *Some commonly used classes in this namespace* 
 
 | **Mutex** | It is a synchronization primitive that can also be used for IPS (interprocess synchronization). |
-|--|--|
 | **Monitor** |  This class provides a mechanism that access objects in synchronize manner.|
 | **Semaphore** |  This class is used to limit the number of threads that can access a resource or pool of resources concurrently.|
 | **Thread** |  This class is used to creates and controls a thread, sets its priority, and gets its status.|
