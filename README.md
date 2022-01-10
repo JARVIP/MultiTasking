@@ -1,4 +1,3 @@
-
 # C# Multithreading
 This project provides example of execution multiple tasks or processes over a certain time interval.
 
@@ -41,6 +40,22 @@ The Join method of Thread class in C# blocks the current thread and makes it wai
 > The second version of the Join Method allows us to specify the time out. It means it will block the calling thread until the child thread terminates or the  specified time elapses.
 
 The IsAlive method of Thread class returns true if the thread is still executing else returns false.
+
+### Lock & Monitor
+*Both lock and monitor provides a mechanism which ensures that only one thread is executing the critical section code at any given point of time to avoid any functional breaking of code.*
+The Monitor class in C# provides a mechanism that synchronizes access to objects. The Monitor is a static class and belongs to the System.Threading namespace. As a static class, it provides a collection of static methods 
+
+- **Enter, TryEnter:**
+	 These two methods are used to acquire an exclusive lock for an object. This action marks the beginning of a critical section. No other thread can enter into the critical section unless it is executing the instructions in the critical section using a different locked object.
+- **Wait:**
+	 The Wait method is used to release the lock on an object and permit other threads to lock and access the object by blocking the current thread until it reacquires the lock. The calling thread waits while another thread accesses the object. Pulse signals are used to notify waiting threads about changes to an object’s state.
+- **Pulse (signal), PulseAll:**
+	The above two methods are used to send a signal to one or more waiting threads. The signal notifies a waiting thread that the state of the locked object has changed, and the owner of the lock is ready to release the lock.
+- **Exit:**
+	The Exit method is used to release the exclusive lock from the specified object. This action marks the end of a critical section protected by the locked object.
+	
+> The **lock** is the shortcut for **Monitor.Enter with try and finally**. So, the lock provides the basic functionality to acquire an exclusive lock on a synchronized object. But, If you want more control to implement advanced multithreading solutions using TryEnter() Wait(), Pulse(), and PulseAll() methods, then the Monitor class is your option.
+	
 ### Important Points
 
 -   A  **deadlock** can occur if the thread that calls Abort methods holds a lock that the aborted thread requires.
