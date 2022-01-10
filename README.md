@@ -28,7 +28,7 @@ This project provides example of execution multiple tasks or processes over a ce
     -   Suspend() method is called.
 - **Dead State:**  When the thread completes its task, then thread enters into dead, terminates, abort state.
 
-### # Join & IsAlive
+### Join & IsAlive
 The Join method of Thread class in C# blocks the current thread and makes it wait until the child thread on which the Join method invoked completes its execution.
 
     public void Join();
