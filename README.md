@@ -1,3 +1,4 @@
+
 # C# Multithreading
 This project provides example of execution multiple tasks or processes over a certain time interval.
 
@@ -27,6 +28,18 @@ This project provides example of execution multiple tasks or processes over a ce
     -   Suspend() method is called.
 - **Dead State:**  When the thread completes its task, then thread enters into dead, terminates, abort state.
 
+### # Join & IsAlive
+The Join method of Thread class in C# blocks the current thread and makes it wait until the child thread on which the Join method invoked completes its execution.
+
+    public void Join();
+    public void Join(int millisecondsTimeout);
+    public void Join(TimeSpan timeout);
+
+> The first version of the Join method which does not take any parameter will block the calling thread (i.e. the Parent thread) until the thread (child thread) completes its execution. 
+
+> The second version of the Join Method allows us to specify the time out. It means it will block the calling thread until the child thread terminates or the  specified time elapses.
+
+The IsAlive method of Thread class returns true if the thread is still executing else returns false.
 ### Important Points
 
 -   A  **deadlock** can occur if the thread that calls Abort methods holds a lock that the aborted thread requires.
