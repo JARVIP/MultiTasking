@@ -43,6 +43,7 @@ The IsAlive method of Thread class returns true if the thread is still executing
 
 ### Lock & Monitor
 *Both lock and monitor provides a mechanism which ensures that only one thread is executing the critical section code at any given point of time to avoid any functional breaking of code.*
+
 The Monitor class in C# provides a mechanism that synchronizes access to objects. The Monitor is a static class and belongs to the System.Threading namespace. As a static class, it provides a collection of static methods 
 
 - **Enter, TryEnter:**
