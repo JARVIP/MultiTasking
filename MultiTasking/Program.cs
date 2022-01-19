@@ -50,18 +50,28 @@ namespace MultiTasking
 
             //monitor
 
-            Thread[] Threads = new Thread[3];
-            for (int i = 0; i < 3; i++)
-            {
-                Threads[i] = new Thread(obj.PrintNumbers);
-                Threads[i].Name = "Child Thread " + i;
-            }
-            foreach (Thread t in Threads)
-            {
-                t.Start();
-            }
-            Console.ReadLine();
+            //Thread[] Threads = new Thread[3];
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Threads[i] = new Thread(obj.PrintNumbers);
+            //    Threads[i].Name = "Child Thread " + i;
+            //}
+            //foreach (Thread t in Threads)
+            //{
+            //    t.Start();
+            //}
+            //Console.ReadLine();
 
+
+            // Mutex
+
+            for (int i = 1; i <= 5; i++)
+            {
+                Thread threadObject = new Thread(obj.MutexDemo);
+                threadObject.Name = "Thread " + i;
+                threadObject.Start();
+            }
+            Console.ReadKey();
 
             #endregion
         }

@@ -55,5 +55,23 @@ namespace MultiTasking.MultiThreading
                 Console.WriteLine(Thread.CurrentThread.Name + " Exit from critical section");
             }
         }
+
+        private static Mutex mutex = new Mutex();
+
+        internal void MutexDemo()
+        {
+            Console.WriteLine(Thread.CurrentThread.Name + " Wants to Enter Critical Section for processing");
+            try
+            {
+                mutex.WaitOne();
+                Console.WriteLine("Success: " + Thread.CurrentThread.Name + " is Processing now");
+                Thread.Sleep(2000);
+                Console.WriteLine("Exit: " + Thread.CurrentThread.Name + " is Completed its task");
+            }
+            finally
+            {
+                mutex.ReleaseMutex();
+            }
+        }
     }
 }
