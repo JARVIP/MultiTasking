@@ -33,9 +33,11 @@ namespace MultiTasking
             #endregion
 
             #region ProtectingSharedResource
+            // ProtectingSharedResource obj = new ProtectingSharedResource(0);
+
 
             //lock
-            ProtectingSharedResource obj = new ProtectingSharedResource(0);
+
             //Thread t1 = new Thread(obj.IncrementCount);
             //Thread t2 = new Thread(obj.IncrementCount);
             //Thread t3 = new Thread(obj.IncrementCount);
@@ -65,11 +67,27 @@ namespace MultiTasking
 
             // Mutex
 
-            for (int i = 1; i <= 5; i++)
+            //for (int i = 1; i <= 5; i++)
+            //{
+            //    Thread threadObject = new Thread(obj.MutexDemo);
+            //    threadObject.Name = "Thread " + i;
+            //    threadObject.Start();
+            //}
+            //Console.ReadKey();
+
+            #endregion
+
+            #region LimitTheNumberOfThreads
+
+            LimitTheNumberOfThreads obj = new LimitTheNumberOfThreads();
+
+            for (int i = 1; i <= 10; i++)
             {
-                Thread threadObject = new Thread(obj.MutexDemo);
-                threadObject.Name = "Thread " + i;
-                threadObject.Start();
+                Thread threadObject = new Thread(obj.DoSomeTask)
+                {
+                    Name = "Thread " + i
+                };
+                threadObject.Start(i);
             }
             Console.ReadKey();
 
