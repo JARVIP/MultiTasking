@@ -1,3 +1,4 @@
+
 # C# Multithreading
 This project provides example of execution multiple tasks or processes over a certain time interval.
 
@@ -56,6 +57,16 @@ The Monitor class in C# provides a mechanism that synchronizes access to objects
 	The Exit method is used to release the exclusive lock from the specified object. This action marks the end of a critical section protected by the locked object.
 	
 > The **lock** is the shortcut for **Monitor.Enter with try and finally**. So, the lock provides the basic functionality to acquire an exclusive lock on a synchronized object. But, If you want more control to implement advanced multithreading solutions using TryEnter() Wait(), Pulse(), and PulseAll() methods, then the Monitor class is your option.
+
+### Mutex
+*A Mutex is like a C# lock, but it can work across multiple processes. In other words, Mutex can be computer-wide as well as application-wide.*
+
+>A Mutex is a synchronization primitive that can also be used for interprocess synchronization. When two or more threads need to access a shared resource at the same time, the system needs a synchronization mechanism to ensure that only one thread at a time uses the resource. Mutex is a synchronization primitive that grants exclusive access to the shared resource to only one thread. If a thread acquires a Mutex, the second thread that wants to acquire that Mutex is suspended until the first thread releases the Mutex.  
+  
+>In short, A mutual exclusion ("Mutex") is a mechanism that acts as a flag to prevent two threads from performing one or more actions simultaneously. The entire action that you want to run exclusively is called a critical section or protected section.
+### Semaphore
+*The Semaphore in C# is used to limit the number of threads that can have access to a shared resource concurrently.*
+> We can say that Semaphore allows one or more threads to enter into the critical section and execute the task concurrently with thread safety. So, in real-time, we need to use Semaphore when we have a limited number of resources and we want to limit the number of threads that can use it.
 	
 ### Important Points
 
